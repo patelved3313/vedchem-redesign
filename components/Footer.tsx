@@ -4,9 +4,8 @@ import Logo from './Logo';
 
 export default function Footer() {
   return (
-    <footer className="mt-10 border-t bg-white">
+    <footer className="border-t bg-white">
       <div className="mx-auto max-w-7xl px-6 py-14">
-        {/* Subscribe */}
         <div className="mb-16 rounded-[2rem] bg-gradient-to-r from-red-600 to-orange-500 p-8 text-white md:p-12">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-white/80">
             Stay Updated
@@ -17,12 +16,12 @@ export default function Footer() {
               Get product updates from Ved Chem.
             </h2>
 
-            <div className="flex rounded-full bg-white p-2 shadow-lg">
+            <div className="flex flex-col gap-3 rounded-[2rem] bg-white p-3 shadow-lg sm:flex-row sm:rounded-full">
               <input
                 placeholder="Enter your email"
-                className="w-full rounded-full px-5 text-black outline-none md:w-64"
+                className="rounded-full px-5 py-3 text-black outline-none"
               />
-              <button className="flex items-center gap-2 rounded-full bg-black px-6 py-3 font-bold text-white">
+              <button className="flex items-center justify-center gap-2 rounded-full bg-black px-6 py-3 font-bold text-white">
                 <Send className="h-4 w-4" />
                 Subscribe
               </button>
@@ -30,50 +29,32 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Footer Content */}
         <div className="grid gap-10 md:grid-cols-4">
-          <div className="md:col-span-1">
+          <div>
             <Logo />
             <p className="mt-5 leading-relaxed text-gray-600">
-              Ved Chem Corporation is a buyer-focused chemical supplier from
-              India serving feed, pharma, nutraceutical, and speciality chemical
-              markets.
+              Ved Chem Corporation is a buyer-focused chemical supplier from India serving feed,
+              pharma, nutraceutical, and speciality chemical markets.
             </p>
           </div>
 
           <div>
             <h3 className="text-xl font-black text-black">Quick Links</h3>
             <div className="mt-5 space-y-3 text-gray-600">
-              <Link className="block hover:text-red-600" href="/en/about">
-                About Us
-              </Link>
-              <Link className="block hover:text-red-600" href="/en/products">
-                Products
-              </Link>
-              <Link className="block hover:text-red-600" href="/en/quality">
-                Quality
-              </Link>
-              <Link className="block hover:text-red-600" href="/en/contact">
-                Contact Us
-              </Link>
+              <Link className="block hover:text-red-600" href="/en/about">About Us</Link>
+              <Link className="block hover:text-red-600" href="/en/products">Products</Link>
+              <Link className="block hover:text-red-600" href="/en/quality">Quality</Link>
+              <Link className="block hover:text-red-600" href="/en/contact">Contact Us</Link>
             </div>
           </div>
 
           <div>
             <h3 className="text-xl font-black text-black">Products</h3>
             <div className="mt-5 space-y-3 text-gray-600">
-              <Link className="block hover:text-red-600" href="/en/products">
-                Vitamins
-              </Link>
-              <Link className="block hover:text-red-600" href="/en/products">
-                Mineral Salts
-              </Link>
-              <Link className="block hover:text-red-600" href="/en/products">
-                Amino Acids
-              </Link>
-              <Link className="block hover:text-red-600" href="/en/products">
-                Chelated Minerals
-              </Link>
+              <Link className="block hover:text-red-600" href="/en/products">Vitamins</Link>
+              <Link className="block hover:text-red-600" href="/en/products">Mineral Salts</Link>
+              <Link className="block hover:text-red-600" href="/en/products">Amino Acids</Link>
+              <Link className="block hover:text-red-600" href="/en/products">Chelated Minerals</Link>
             </div>
           </div>
 
