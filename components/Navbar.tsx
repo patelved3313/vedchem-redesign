@@ -5,13 +5,13 @@ import Link from 'next/link';
 import { Mail, Menu, Phone, X } from 'lucide-react';
 import Logo from './Logo';
 
-const nav = [
-  ['Home', '/en'],
-  ['About Us', '/en/about'],
-  ['Products', '/en/products'],
-  ['Quality', '/en/quality'],
-  ['Infrastructure', '/en/infrastructure'],
-  ['Contact Us', '/en/contact'],
+const nav: { label: string; href: string }[] = [
+  { label: 'Home', href: '/en' },
+  { label: 'About Us', href: '/en/about' },
+  { label: 'Products', href: '/en/products' },
+  { label: 'Quality', href: '/en/quality' },
+  { label: 'Infrastructure', href: '/en/infrastructure' },
+  { label: 'Contact Us', href: '/en/contact' },
 ];
 
 export default function Navbar() {
@@ -43,13 +43,13 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
-          {nav.map(([label, href]) => (
+          {nav.map((item) => (
             <Link
-              key={href}
-              href={href}
+              key={item.href}
+              href={item.href}
               className="text-sm font-bold text-black transition hover:text-red-600"
             >
-              {label}
+              {item.label}
             </Link>
           ))}
         </nav>
@@ -62,6 +62,7 @@ export default function Navbar() {
         </Link>
 
         <button
+          type="button"
           onClick={() => setOpen((value) => !value)}
           className="flex h-12 w-12 items-center justify-center rounded-full border bg-white shadow-sm lg:hidden"
           aria-label="Toggle menu"
@@ -78,14 +79,14 @@ export default function Navbar() {
         <div className="absolute left-0 top-full z-50 w-full border-t bg-white shadow-xl lg:hidden">
           <nav className="mx-auto max-w-7xl px-6 py-5">
             <div className="space-y-2">
-              {nav.map(([label, href]) => (
+              {nav.map((item) => (
                 <Link
-                  key={href}
-                  href={href}
+                  key={item.href}
+                  href={item.href}
                   onClick={() => setOpen(false)}
                   className="block rounded-2xl px-5 py-4 text-lg font-black text-black transition hover:bg-orange-50 hover:text-red-600"
                 >
-                  {label}
+                  {item.label}
                 </Link>
               ))}
             </div>
