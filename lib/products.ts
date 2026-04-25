@@ -1,186 +1,99 @@
 export const categories = [
-  {
-    name: 'Vitamins',
-    slug: 'vitamins',
-    line: 'Essential vitamins for feed, pharma, and nutraceutical applications.',
-  },
-  {
-    name: 'Mineral Salts',
-    slug: 'mineral-salts',
-    line: 'Reliable mineral inputs for industrial and nutrition-focused use.',
-  },
-  {
-    name: 'Amino Acids',
-    slug: 'amino-acids',
-    line: 'Amino acid products for nutrition and formulation needs.',
-  },
-  {
-    name: 'Antibiotics',
-    slug: 'antibiotics',
-    line: 'Specialized antibiotic products for relevant B2B buyers.',
-  },
-  {
-    name: 'Chelated Minerals',
-    slug: 'chelated-minerals',
-    line: 'Chelated mineral solutions designed for better performance.',
-  },
-  {
-    name: 'Other Chemicals',
-    slug: 'other-chemicals',
-    line: 'Speciality chemicals for diverse industrial requirements.',
-  },
+  { name: 'Vitamins', slug: 'vitamins', line: 'Feed & pharma vitamins' },
+  { name: 'Mineral Salts', slug: 'mineral-salts', line: 'Inorganic minerals' },
+  { name: 'Amino Acids', slug: 'amino-acids', line: 'Feed & pharma amino acids' },
+  { name: 'Antibiotics', slug: 'antibiotics', line: 'Veterinary antibiotics' },
+  { name: 'Chelated Minerals', slug: 'chelated-minerals', line: 'Organic trace minerals' },
+  { name: 'Other Chemicals', slug: 'other-chemicals', line: 'Specialty chemicals' }
 ];
 
 export const products = [
   {
-    name: 'Vitamin A Palmitate',
-    slug: 'vitamin-a-palmitate',
-    category: 'Vitamins',
-    short:
-      'Vitamin A Palmitate supplied with a quality-focused B2B sourcing approach.',
-    description:
-      'Vitamin A Palmitate is used across animal feed, food, pharmaceutical, and nutraceutical applications where dependable quality and consistent documentation are important for international buyers.',
-    applications: ['Animal nutrition', 'Food fortification', 'Pharmaceutical formulations', 'Nutraceutical products'],
-    features: ['Quality-focused sourcing', 'Documentation-ready', 'B2B supply support', 'Packaging flexibility'],
-    packaging: 'Packaging options can be provided based on buyer requirement, shipment volume, and product availability.',
-  },
-  {
-    name: 'Vitamin D3 (Cholecalciferol)',
-    slug: 'vitamin-d3-cholecalciferol',
-    category: 'Vitamins',
-    short:
-      'Vitamin D3 for nutrition and formulation requirements across global markets.',
-    description:
-      'Vitamin D3 is a widely used vitamin ingredient for nutrition-focused formulations and B2B supply needs. Ved Chem supports buyers with clear inquiry flow and export-oriented communication.',
-    applications: ['Feed premix', 'Nutraceuticals', 'Food applications', 'Pharmaceutical use'],
-    features: ['Reliable sourcing', 'Buyer-focused support', 'Export-ready communication', 'Quality documentation support'],
-    packaging: 'Packaging details are shared during quotation based on product grade and required quantity.',
-  },
-  {
-    name: 'Vitamin E Acetate 50%',
-    slug: 'vitamin-e-acetate-50',
-    category: 'Vitamins',
-    short:
-      'Vitamin E Acetate 50% for nutrition, feed, and formulation applications.',
-    description:
-      'Vitamin E Acetate 50% is suitable for buyers seeking vitamin inputs for animal nutrition, nutraceutical, and formulation usage with professional sourcing support.',
-    applications: ['Animal feed', 'Premix manufacturing', 'Nutraceuticals', 'Speciality formulations'],
-    features: ['B2B focused', 'Clear product inquiry', 'Reliable packaging support', 'Professional communication'],
-    packaging: 'Available packaging depends on product format, order size, and export requirements.',
-  },
-  {
     name: 'Vitamin K3 (Menadione Sodium Bisulfite)',
     slug: 'vitamin-k3-menadione-sodium-bisulfite',
     category: 'Vitamins',
-    short:
-      'Vitamin K3 supplied with documentation-ready quality focus for B2B buyers.',
+    short: 'Vitamin K3 for feed and pharmaceutical applications.',
     description:
-      'Vitamin K3 is commonly used in nutrition-related applications and is supplied through a buyer-first inquiry experience focused on clarity, communication, and consistency.',
-    applications: ['Animal nutrition', 'Feed premix', 'Industrial nutrition formulations'],
-    features: ['Clear product details', 'RFQ support', 'Packaging guidance', 'Global buyer support'],
-    packaging: 'Packaging and availability are confirmed during quotation.',
+      'Vitamin K3 (Menadione Sodium Bisulfite) is widely used in animal nutrition and pharmaceutical formulations. It supports blood coagulation and overall metabolic functions.',
+    applications: ['Animal feed', 'Pharmaceutical formulations'],
+    features: ['High purity', 'Stable composition', 'Consistent quality'],
+    packaging: 'Available in 25kg bags with export-ready packaging.'
   },
   {
     name: 'Vitamin B1 (Thiamine Mononitrate)',
     slug: 'vitamin-b1-thiamine-mononitrate',
     category: 'Vitamins',
-    short:
-      'Vitamin B1 for feed, pharma, nutraceutical and related B2B applications.',
+    short: 'Essential vitamin for feed and nutraceutical use.',
     description:
-      'Vitamin B1 is used in nutrition and formulation applications where consistent sourcing and clear documentation matter to buyers.',
-    applications: ['Nutraceuticals', 'Food applications', 'Feed formulations', 'Pharmaceutical use'],
-    features: ['Trusted sourcing', 'Inquiry support', 'Buyer-friendly documentation', 'Flexible supply discussion'],
-    packaging: 'Packaging details can be shared after product inquiry.',
+      'Vitamin B1 (Thiamine Mononitrate) plays a crucial role in energy metabolism and is widely used in feed and nutraceutical industries.',
+    applications: ['Animal nutrition', 'Dietary supplements'],
+    features: ['High stability', 'Uniform particle size'],
+    packaging: 'Packed in 25kg fiber drums or bags.'
   },
   {
-    name: 'Vitamin B2 (Riboflavin)',
-    slug: 'vitamin-b2-riboflavin',
-    category: 'Vitamins',
-    short:
-      'Vitamin B2 Riboflavin for nutrition and formulation applications.',
-    description:
-      'Vitamin B2 Riboflavin supports a range of nutrition-focused applications and can be sourced based on buyer requirements and market availability.',
-    applications: ['Animal nutrition', 'Food fortification', 'Nutraceutical products', 'Formulations'],
-    features: ['Quality focus', 'Professional RFQ support', 'Export communication', 'Consistent buyer experience'],
-    packaging: 'Packaging options are discussed during inquiry.',
-  },
-  {
-    name: 'DCP',
-    slug: 'dcp',
+    name: 'Dicalcium Phosphate (DCP)',
+    slug: 'dicalcium-phosphate-dcp',
     category: 'Mineral Salts',
-    short: 'Dicalcium Phosphate for feed and mineral nutrition applications.',
+    short: 'Calcium and phosphorus supplement for feed.',
     description:
-      'DCP is a mineral ingredient used by buyers in feed and nutrition sectors. Ved Chem supports B2B inquiries with practical sourcing and export-ready communication.',
-    applications: ['Animal feed', 'Mineral nutrition', 'Premix manufacturing'],
-    features: ['Bulk sourcing support', 'Packaging guidance', 'B2B inquiry flow', 'Reliable communication'],
-    packaging: 'Packaging can be discussed according to quantity and shipment needs.',
-  },
-  {
-    name: 'TCP',
-    slug: 'tcp',
-    category: 'Mineral Salts',
-    short: 'Tricalcium Phosphate for mineral and formulation requirements.',
-    description:
-      'TCP is used in mineral-focused applications and is available for B2B sourcing inquiries depending on buyer specifications.',
-    applications: ['Mineral formulations', 'Feed use', 'Industrial applications'],
-    features: ['Specification-based inquiry', 'Quality focus', 'Export support', 'Professional response'],
-    packaging: 'Packaging availability depends on order requirement.',
+      'Dicalcium Phosphate (DCP) is used as a mineral supplement in animal feed to support bone development and growth.',
+    applications: ['Animal feed'],
+    features: ['High bioavailability', 'Low heavy metals'],
+    packaging: '25kg bags with palletized export packaging.'
   },
   {
     name: 'Ferrous Sulphate',
     slug: 'ferrous-sulphate',
     category: 'Mineral Salts',
-    short: 'Ferrous Sulphate for mineral supply and industrial use.',
+    short: 'Iron supplement for feed and industrial use.',
     description:
-      'Ferrous Sulphate is a mineral salt used in multiple industries and can be supplied based on buyer requirements and commercial specifications.',
-    applications: ['Animal nutrition', 'Industrial use', 'Mineral formulations'],
-    features: ['B2B supply support', 'Documentation focus', 'Quantity-based quotation', 'Responsive inquiry process'],
-    packaging: 'Packaging options are confirmed during quotation.',
+      'Ferrous Sulphate is widely used as an iron source in feed and industrial applications.',
+    applications: ['Animal feed', 'Water treatment'],
+    features: ['Consistent iron content', 'Stable quality'],
+    packaging: '25kg bags or jumbo bags.'
   },
   {
-    name: 'L-Lysine HCL',
-    slug: 'l-lysine-hcl',
+    name: 'L-Lysine',
+    slug: 'l-lysine',
     category: 'Amino Acids',
-    short: 'L-Lysine HCL for feed and nutrition-focused applications.',
+    short: 'Essential amino acid for animal nutrition.',
     description:
-      'L-Lysine HCL is an amino acid product used in feed and nutrition markets. Ved Chem supports product inquiries with a clear RFQ and WhatsApp flow.',
-    applications: ['Animal feed', 'Nutrition formulations', 'Premix use'],
-    features: ['Feed-grade sourcing support', 'Buyer-focused communication', 'Export-ready approach', 'Flexible inquiry'],
-    packaging: 'Packaging will be provided according to commercial and shipment requirements.',
+      'L-Lysine is an essential amino acid used in feed to improve growth performance and protein synthesis.',
+    applications: ['Animal feed'],
+    features: ['High purity', 'Improves feed efficiency'],
+    packaging: '25kg bags.'
   },
   {
-    name: 'DL-Methionine',
-    slug: 'dl-methionine',
-    category: 'Amino Acids',
-    short: 'DL-Methionine for feed and amino acid formulation needs.',
+    name: 'Oxytetracycline',
+    slug: 'oxytetracycline',
+    category: 'Antibiotics',
+    short: 'Broad-spectrum veterinary antibiotic.',
     description:
-      'DL-Methionine is used in amino-acid nutrition applications and can be sourced for B2B buyers based on specifications and availability.',
-    applications: ['Animal nutrition', 'Feed premix', 'Amino acid supplementation'],
-    features: ['Clear quotation process', 'Professional buyer support', 'Quality-oriented supply', 'Export communication'],
-    packaging: 'Packaging depends on buyer requirement and shipment plan.',
+      'Oxytetracycline is widely used in veterinary medicine to control bacterial infections.',
+    applications: ['Veterinary use'],
+    features: ['Effective spectrum', 'Reliable quality'],
+    packaging: '25kg drums.'
+  },
+  {
+    name: 'Zinc Methionine',
+    slug: 'zinc-methionine',
+    category: 'Chelated Minerals',
+    short: 'Highly bioavailable zinc source.',
+    description:
+      'Zinc Methionine is an organic trace mineral used in feed to improve absorption and performance.',
+    applications: ['Animal feed'],
+    features: ['High bioavailability', 'Improved absorption'],
+    packaging: '25kg bags.'
   },
   {
     name: 'Choline Chloride',
     slug: 'choline-chloride',
     category: 'Other Chemicals',
-    short: 'Choline Chloride for feed and industrial nutrition applications.',
+    short: 'Essential nutrient additive for feed.',
     description:
-      'Choline Chloride is commonly used in feed and nutrition applications. Ved Chem supports buyers with practical communication and RFQ-based supply discussion.',
-    applications: ['Feed industry', 'Animal nutrition', 'Premix manufacturing'],
-    features: ['Responsive support', 'Requirement-based quotation', 'Packaging flexibility', 'Global buyer focus'],
-    packaging: 'Packaging options are confirmed as per inquiry.',
-  },
-  {
-    name: 'Chelated Minerals',
-    slug: 'chelated-minerals',
-    category: 'Chelated Minerals',
-    short: 'Chelated mineral solutions for improved nutrition-focused results.',
-    description:
-      'Chelated Minerals are designed for buyers looking for mineral inputs with better usability in nutrition-related applications.',
-    applications: ['Animal nutrition', 'Specialty feed', 'Mineral premix'],
-    features: ['Better nutrition positioning', 'B2B focused', 'Custom inquiry support', 'Packaging assistance'],
-    packaging: 'Packaging depends on product variant and commercial requirement.',
-  },
+      'Choline Chloride is used as a feed additive to support metabolism and liver function.',
+    applications: ['Animal feed'],
+    features: ['Stable formulation', 'High purity'],
+    packaging: 'Liquid or powder packaging available.'
+  }
 ];
-
-export const featuredProducts = products.slice(0, 8);
