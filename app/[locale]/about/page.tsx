@@ -26,27 +26,25 @@ const values = [
 export default function AboutPage() {
   return (
     <main className="bg-white">
-      <section className="relative overflow-hidden bg-gradient-to-br from-black via-red-950 to-orange-600 px-6 py-24 text-white">
-        <div className="absolute right-[-120px] top-[-120px] h-80 w-80 rounded-full bg-orange-400/20 blur-3xl" />
-        <div className="absolute bottom-[-140px] left-[-140px] h-96 w-96 rounded-full bg-red-500/20 blur-3xl" />
-
-        <div className="relative mx-auto max-w-7xl">
-          <p className="text-sm font-black uppercase tracking-[0.25em] text-orange-200">
+      {/* HERO */}
+      <section className="bg-gradient-to-r from-red-600 to-orange-500 px-6 py-20 text-white">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-white/80">
             About Us
           </p>
 
-          <h1 className="mt-5 max-w-4xl text-5xl font-black leading-tight md:text-6xl">
-            Trusted chemical supply from Chhatral, Gujarat.
+          <h1 className="mt-4 text-5xl font-black">
+            Ved Chem Corporation
           </h1>
 
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/85">
-            Ved Chem Corporation has been serving buyers since 2013 with a strong
-            focus on quality, client satisfaction, and dependable chemical
-            sourcing.
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/90">
+            Trusted chemical supply from Chhatral, Gujarat, delivering quality
+            products and dependable service since 2013.
           </p>
         </div>
       </section>
 
+      {/* COMPANY CONTENT */}
       <section className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <p className="text-sm font-black uppercase tracking-[0.25em] text-red-600">
@@ -60,7 +58,7 @@ export default function AboutPage() {
           <div className="mt-7 space-y-5 text-lg leading-relaxed text-gray-600">
             <p>
               Ved Chem Corporation is a Gujarat-based company operating from
-              Chhatral, incorporated in 2011. Over the years, we have built a
+              Chhatral, incorporated in 2013. Over the years, we have built a
               strong presence as a reliable manufacturer, wholesaler,
               distributor, supplier, and trader of pharmaceutical raw materials,
               vitamins, poultry veterinary chemicals, animal feed supplements,
@@ -108,6 +106,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* VALUES */}
       <section className="bg-gray-50 px-6 py-20">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
