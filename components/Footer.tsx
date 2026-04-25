@@ -1,2 +1,109 @@
-import Link from 'next/link';import { Mail, MapPin, Phone, Send } from 'lucide-react';import Logo from './Logo';
-export default function Footer(){return <footer className="mt-24 overflow-hidden rounded-t-[3rem] bg-white"><div className="container"><div className="relative overflow-hidden rounded-6xl red-orange p-10 text-white md:p-14"><div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/20 blur-3xl"/><div className="relative flex flex-wrap items-center justify-between gap-8"><div><p className="font-black uppercase tracking-[.2em] text-white/80">Stay updated</p><h2 className="mt-3 text-4xl font-black tracking-[-.04em]">Get product updates from Ved Chem.</h2></div><div className="flex w-full max-w-md overflow-hidden rounded-full bg-white p-2"><input className="min-w-0 flex-1 px-5 text-sm text-black outline-none" placeholder="Enter your email"/><button className="rounded-full bg-black px-6 py-3 font-black"><Send className="inline h-4 w-4"/> Subscribe</button></div></div></div></div><div className="container grid gap-10 py-14 md:grid-cols-[1.5fr_1fr_1fr_1fr]"><div><Logo/><p className="mt-5 max-w-sm text-sm leading-7 text-black/58">Ved Chem Corporation is a buyer-focused chemical supplier from India serving feed, pharma, nutraceutical and speciality chemical markets.</p></div><div><h4 className="mb-4 font-black">Quick Links</h4><div className="grid gap-3 text-sm text-black/60"><Link href="/en/about">About Us</Link><Link href="/en/products">Products</Link><Link href="/en/quality">Quality</Link></div></div><div><h4 className="mb-4 font-black">Products</h4><div className="grid gap-3 text-sm text-black/60"><span>Vitamins</span><span>Mineral Salts</span><span>Amino Acids</span><span>Chelated Minerals</span></div></div><div><h4 className="mb-4 font-black">Contact</h4><div className="grid gap-3 text-sm text-black/60"><span className="flex gap-2"><Phone className="h-4 w-4 text-vedOrange"/> +91 9925256056</span><span className="flex gap-2"><Mail className="h-4 w-4 text-vedOrange"/> vedchem2011@gmail.com</span><span className="flex gap-2"><MapPin className="h-4 w-4 text-vedOrange"/> India</span></div></div></div><div className="red-orange py-5 text-center text-xs font-semibold text-white">© 2026 Ved Chem Corporation. All Rights Reserved.</div></footer>}
+import Link from 'next/link';
+import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import Logo from './Logo';
+
+export default function Footer() {
+  return (
+    <footer className="mt-10 border-t bg-white">
+      <div className="mx-auto max-w-7xl px-6 py-14">
+        {/* Subscribe */}
+        <div className="mb-16 rounded-[2rem] bg-gradient-to-r from-red-600 to-orange-500 p-8 text-white md:p-12">
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-white/80">
+            Stay Updated
+          </p>
+
+          <div className="mt-5 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <h2 className="max-w-2xl text-4xl font-black leading-tight">
+              Get product updates from Ved Chem.
+            </h2>
+
+            <div className="flex rounded-full bg-white p-2 shadow-lg">
+              <input
+                placeholder="Enter your email"
+                className="w-full rounded-full px-5 text-black outline-none md:w-64"
+              />
+              <button className="flex items-center gap-2 rounded-full bg-black px-6 py-3 font-bold text-white">
+                <Send className="h-4 w-4" />
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Content */}
+        <div className="grid gap-10 md:grid-cols-4">
+          <div className="md:col-span-1">
+            <Logo />
+            <p className="mt-5 leading-relaxed text-gray-600">
+              Ved Chem Corporation is a buyer-focused chemical supplier from
+              India serving feed, pharma, nutraceutical, and speciality chemical
+              markets.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-black text-black">Quick Links</h3>
+            <div className="mt-5 space-y-3 text-gray-600">
+              <Link className="block hover:text-red-600" href="/en/about">
+                About Us
+              </Link>
+              <Link className="block hover:text-red-600" href="/en/products">
+                Products
+              </Link>
+              <Link className="block hover:text-red-600" href="/en/quality">
+                Quality
+              </Link>
+              <Link className="block hover:text-red-600" href="/en/contact">
+                Contact Us
+              </Link>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-black text-black">Products</h3>
+            <div className="mt-5 space-y-3 text-gray-600">
+              <Link className="block hover:text-red-600" href="/en/products">
+                Vitamins
+              </Link>
+              <Link className="block hover:text-red-600" href="/en/products">
+                Mineral Salts
+              </Link>
+              <Link className="block hover:text-red-600" href="/en/products">
+                Amino Acids
+              </Link>
+              <Link className="block hover:text-red-600" href="/en/products">
+                Chelated Minerals
+              </Link>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-black text-black">Contact</h3>
+            <div className="mt-5 space-y-4 text-gray-600">
+              <p className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-red-600" />
+                +91 9925256056
+              </p>
+              <p className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-red-600" />
+                vedchem2011@gmail.com
+              </p>
+              <p className="flex items-center gap-3">
+                <MapPin className="h-5 w-5 text-red-600" />
+                India
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 flex flex-col gap-4 border-t pt-6 text-sm text-gray-500 md:flex-row md:items-center md:justify-between">
+          <p>© 2026 Ved Chem Corporation. All Rights Reserved.</p>
+          <div className="flex gap-5">
+            <Link href="/en/privacy">Privacy Policy</Link>
+            <Link href="/en/terms">Terms & Conditions</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
