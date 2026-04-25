@@ -26,21 +26,41 @@ export default function ContactPage() {
               to you shortly.
             </p>
 
-            <div className="mt-7 space-y-5 text-gray-700">
-              <p className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-red-600" />
-                +91 9925256056
-              </p>
-              <p className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-red-600" />
-                vedchem2011@gmail.com
-              </p>
-              <p className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 text-red-600" />
-                India
-              </p>
-            </div>
-          </div>
+<div className="mt-7 space-y-5 text-gray-700">
+
+  <a
+    href="tel:+919925256056"
+    className="flex items-start gap-3 hover:text-red-600 transition"
+  >
+    <Phone className="mt-1 h-5 w-5 shrink-0 text-red-600" />
+    <span className="font-semibold">+91 9925256056</span>
+  </a>
+
+  <a
+    href="mailto:vedchem2011@gmail.com"
+    className="flex items-start gap-3 hover:text-red-600 transition"
+  >
+    <Mail className="mt-1 h-5 w-5 shrink-0 text-red-600" />
+    <span className="font-semibold break-all">
+      vedchem2011@gmail.com
+    </span>
+  </a>
+
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=Ved%20Chem%20Corporation%20G%2F18%20Priya%20Avenue%20GIDC%20Chhatral%20Gandhinagar%20382729%20Gujarat%20India"
+    target="_blank"
+    rel="noreferrer"
+    className="flex items-start gap-3 hover:text-red-600 transition"
+  >
+    <MapPin className="mt-1 h-6 w-6 shrink-0 text-red-600" />
+    <span className="leading-relaxed font-medium">
+      G/18, Priya Avenue, G. I. D. C.,<br />
+      Chhatral, Gandhinagar - 382729,<br />
+      Gujarat, India
+    </span>
+  </a>
+
+</div>
 
           <div className="rounded-[2rem] bg-black p-7 text-white">
             <MessageCircle className="h-8 w-8 text-orange-400" />
