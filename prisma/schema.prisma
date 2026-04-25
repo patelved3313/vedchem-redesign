@@ -1,10 +1,88 @@
-generator client { provider = "prisma-client-js" }
-datasource db { provider = "postgresql" url = env("DATABASE_URL") }
-model User { id String @id @default(cuid()) email String @unique passwordHash String role Role @default(ADMIN) createdAt DateTime @default(now()) }
-model Category { id String @id @default(cuid()) name String slug String @unique description String? products Product[] createdAt DateTime @default(now()) updatedAt DateTime @updatedAt }
-model Product { id String @id @default(cuid()) name String slug String @unique categoryId String category Category @relation(fields:[categoryId], references:[id]) shortDescription String description String applications String[] features String[] packaging String? isFeatured Boolean @default(false) seoTitle String? seoDescription String? createdAt DateTime @default(now()) updatedAt DateTime @updatedAt }
-model Lead { id String @id @default(cuid()) name String company String? email String phone String country String product String? quantity String? message String status LeadStatus @default(NEW) createdAt DateTime @default(now()) }
-model Download { id String @id @default(cuid()) title String fileUrl String type String categoryId String? createdAt DateTime @default(now()) }
-model PageContent { id String @id @default(cuid()) key String @unique locale String @default("en") json Json updatedAt DateTime @updatedAt }
-enum Role { ADMIN EDITOR }
-enum LeadStatus { NEW CONTACTED QUOTED CLOSED LOST }
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(ADMIN)
+  createdAt    DateTime @default(now())
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Product {
+  id               String    @id @default(cuid())
+  name             String
+  slug             String    @unique
+  categoryId       String
+  category         Category  @relation(fields: [categoryId], references: [id])
+  shortDescription String
+  description      String
+  applications     String[]
+  features         String[]
+  packaging        String?
+  isFeatured       Boolean   @default(false)
+  seoTitle         String?
+  seoDescription   String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+model Lead {
+  id        String     @id @default(cuid())
+  name      String
+  company   String?
+  email     String
+  phone     String
+  country   String
+  product   String?
+  quantity  String?
+  message   String?
+  status    LeadStatus @default(NEW)
+  createdAt DateTime   @default(now())
+}
+
+model Download {
+  id         String   @id @default(cuid())
+  title      String
+  fileUrl    String
+  type       String
+  categoryId String?
+  createdAt  DateTime @default(now())
+}
+
+model PageContent {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  locale    String   @default("en")
+  json      Json
+  updatedAt DateTime @updatedAt
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUOTED
+  CLOSED
+  LOST
+}
