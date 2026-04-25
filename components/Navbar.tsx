@@ -18,15 +18,17 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b bg-white shadow-sm">
       <div className="hidden bg-black text-white md:block">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 text-sm">
           <span>Trusted. Quality. Results.</span>
+
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-orange-400" />
               +91 9925256056
             </span>
+
             <span className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-orange-400" />
               vedchem2011@gmail.com
@@ -36,7 +38,7 @@ export default function Navbar() {
       </div>
 
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/en" aria-label="Ved Chem Home">
+        <Link href="/en" aria-label="Ved Chem Home" onClick={() => setOpen(false)}>
           <Logo />
         </Link>
 
@@ -60,49 +62,42 @@ export default function Navbar() {
         </Link>
 
         <button
-          onClick={() => setOpen(true)}
+          onClick={() => setOpen((value) => !value)}
           className="flex h-12 w-12 items-center justify-center rounded-full border bg-white shadow-sm lg:hidden"
-          aria-label="Open menu"
+          aria-label="Toggle menu"
         >
-          <Menu className="h-6 w-6 text-black" />
+          {open ? (
+            <X className="h-6 w-6 text-black" />
+          ) : (
+            <Menu className="h-6 w-6 text-black" />
+          )}
         </button>
       </div>
 
       {open && (
-        <div className="fixed inset-0 z-[999] bg-black/50 lg:hidden">
-          <div className="ml-auto h-full w-[84%] max-w-sm bg-white p-6 shadow-2xl">
-            <div className="flex items-center justify-between">
-              <Logo />
-              <button
-                onClick={() => setOpen(false)}
-                className="flex h-11 w-11 items-center justify-center rounded-full border"
-                aria-label="Close menu"
-              >
-                <X className="h-6 w-6 text-black" />
-              </button>
-            </div>
-
-            <nav className="mt-10 space-y-2">
+        <div className="absolute left-0 top-full z-50 w-full border-t bg-white shadow-xl lg:hidden">
+          <nav className="mx-auto max-w-7xl px-6 py-5">
+            <div className="space-y-2">
               {nav.map(([label, href]) => (
                 <Link
                   key={href}
                   href={href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-2xl px-4 py-4 text-lg font-black text-black hover:bg-orange-50 hover:text-red-600"
+                  className="block rounded-2xl px-5 py-4 text-lg font-black text-black transition hover:bg-orange-50 hover:text-red-600"
                 >
                   {label}
                 </Link>
               ))}
-            </nav>
+            </div>
 
             <Link
               href="/en/contact"
               onClick={() => setOpen(false)}
-              className="mt-8 flex justify-center rounded-full bg-gradient-to-r from-red-600 to-orange-500 px-6 py-4 font-black text-white"
+              className="mt-5 flex justify-center rounded-full bg-gradient-to-r from-red-600 to-orange-500 px-6 py-4 font-black text-white"
             >
               Request Quote
             </Link>
-          </div>
+          </nav>
         </div>
       )}
     </header>
