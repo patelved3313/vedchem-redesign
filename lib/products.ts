@@ -97,3 +97,5 @@ export const products = [
     packaging: 'Liquid or powder packaging available.'
   }
 ];
+
+export const featuredProducts = products.slice(0, 8);
