@@ -43,7 +43,7 @@ export default function QualityPage() {
             return (
               <div
                 key={step.title}
-                className="rounded-[2rem] border bg-white p-8 shadow-sm"
+                className="rounded-[2rem] border bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
               >
                 <Icon className="h-10 w-10 text-orange-500" />
                 <h2 className="mt-6 text-2xl font-black text-black">
@@ -72,7 +72,10 @@ export default function QualityPage() {
               'Documentation-oriented communication',
               'Responsive quotation support',
             ].map((item) => (
-              <div key={item} className="flex items-center gap-3 rounded-2xl border border-white/10 p-4">
+              <div
+                key={item}
+                className="flex items-center gap-3 rounded-2xl border border-white/10 p-4"
+              >
                 <CheckCircle2 className="h-5 w-5 text-orange-400" />
                 <span>{item}</span>
               </div>
