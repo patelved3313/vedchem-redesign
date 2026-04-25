@@ -1,4 +1,21 @@
-import { NextResponse } from 'next/server';import { rfqSchema } from '@/lib/rfq';
-export async function POST(req:Request){const body=await req.json();const parsed=rfqSchema.safeParse(body);if(!parsed.success)return NextResponse.json({error:'Invalid form data'}, {status:400});
-// Production: save to Prisma Lead and send email via SMTP/Nodemailer. Kept safe for first deployment without DB credentials.
-console.log('RFQ lead', parsed.data);return NextResponse.json({ok:true});}
+import { NextResponse } from 'next/server';
+
+export async function POST(request: Request) {
+  try {
+    const body = await request.json();
+
+    return NextResponse.json({
+      success: true,
+      message: 'Inquiry received successfully.',
+      data: body,
+    });
+  } catch {
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Invalid request.',
+      },
+      { status: 400 }
+    );
+  }
+}
