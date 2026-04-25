@@ -39,7 +39,7 @@ export default function AboutPage() {
 
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/90">
             Trusted chemical supply from Chhatral, Gujarat, delivering quality
-            products and dependable service since 2013.
+            products and dependable service since 2011.
           </p>
         </div>
       </section>
@@ -58,7 +58,7 @@ export default function AboutPage() {
           <div className="mt-7 space-y-5 text-lg leading-relaxed text-gray-600">
             <p>
               Ved Chem Corporation is a Gujarat-based company operating from
-              Chhatral, incorporated in 2013. Over the years, we have built a
+              Chhatral, incorporated in 2011. Over the years, we have built a
               strong presence as a reliable manufacturer, wholesaler,
               distributor, supplier, and trader of pharmaceutical raw materials,
               vitamins, poultry veterinary chemicals, animal feed supplements,
