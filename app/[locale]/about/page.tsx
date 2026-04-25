@@ -89,7 +89,7 @@ export default function AboutPage() {
 
           <div className="mt-8 grid gap-4">
             {[
-              ['2013', 'Year Incorporated'],
+              ['2011', 'Year Incorporated'],
               ['Chhatral', 'Gujarat, India'],
               ['B2B', 'Manufacturer, Supplier & Trader'],
               ['Quality', 'Focused Product Range'],
