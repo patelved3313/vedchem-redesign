@@ -7,6 +7,7 @@ const products = [
     name: 'Dicalcium Phosphate',
     slug: 'dcp',
     category: 'Feed Additives',
+    categorySlug: 'feed-additives',
     short: 'High-quality DCP for animal nutrition.',
     description: 'Used as a dietary supplement in animal feed to provide calcium and phosphorus.',
     applications: ['Poultry Feed', 'Cattle Feed', 'Aquaculture'],
@@ -17,6 +18,7 @@ const products = [
     name: 'Tricalcium Phosphate',
     slug: 'tcp',
     category: 'Feed Additives',
+    categorySlug: 'feed-additives',
     short: 'Premium TCP for feed and industrial use.',
     description: 'Provides essential minerals for livestock and industrial applications.',
     applications: ['Feed Industry', 'Food Industry'],
@@ -27,17 +29,28 @@ const products = [
 
 async function main() {
   for (const p of products) {
-    // create category if not exists
     const dbCategory = await prisma.category.upsert({
-      where: { name: p.category },
-      update: {},
-      create: { name: p.category },
+      where: { slug: p.categorySlug },
+      update: {
+        name: p.category,
+      },
+      create: {
+        name: p.category,
+        slug: p.categorySlug,
+      },
     });
 
-    // create product
     await prisma.product.upsert({
       where: { slug: p.slug },
-      update: {},
+      update: {
+        name: p.name,
+        categoryId: dbCategory.id,
+        shortDescription: p.short,
+        description: p.description,
+        applications: p.applications,
+        features: p.features,
+        packaging: p.packaging,
+      },
       create: {
         name: p.name,
         slug: p.slug,
