@@ -19,6 +19,8 @@ export default function ContactPage() {
 
       <section className="mx-auto grid max-w-7xl gap-8 px-6 py-20 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="space-y-6">
+
+          {/* Get in Touch Card */}
           <div className="rounded-[2rem] border bg-white p-7 shadow-sm">
             <h2 className="text-2xl font-black text-black">Get in Touch</h2>
             <p className="mt-3 text-gray-600">
@@ -26,42 +28,44 @@ export default function ContactPage() {
               to you shortly.
             </p>
 
-<div className="mt-7 space-y-5 text-gray-700">
+            <div className="mt-7 space-y-5 text-gray-700">
 
-  <a
-    href="tel:+919925256056"
-    className="flex items-start gap-3 hover:text-red-600 transition"
-  >
-    <Phone className="mt-1 h-5 w-5 shrink-0 text-red-600" />
-    <span className="font-semibold">+91 9925256056</span>
-  </a>
+              <a
+                href="tel:+919925256056"
+                className="flex items-start gap-3 hover:text-red-600 transition"
+              >
+                <Phone className="mt-1 h-5 w-5 shrink-0 text-red-600" />
+                <span className="font-semibold">+91 9925256056</span>
+              </a>
 
-  <a
-    href="mailto:vedchem2011@gmail.com"
-    className="flex items-start gap-3 hover:text-red-600 transition"
-  >
-    <Mail className="mt-1 h-5 w-5 shrink-0 text-red-600" />
-    <span className="font-semibold break-all">
-      vedchem2011@gmail.com
-    </span>
-  </a>
+              <a
+                href="mailto:vedchem2011@gmail.com"
+                className="flex items-start gap-3 hover:text-red-600 transition"
+              >
+                <Mail className="mt-1 h-5 w-5 shrink-0 text-red-600" />
+                <span className="font-semibold break-all">
+                  vedchem2011@gmail.com
+                </span>
+              </a>
 
-  <a
-    href="https://www.google.com/maps/search/?api=1&query=Ved%20Chem%20Corporation%20G%2F18%20Priya%20Avenue%20GIDC%20Chhatral%20Gandhinagar%20382729%20Gujarat%20India"
-    target="_blank"
-    rel="noreferrer"
-    className="flex items-start gap-3 hover:text-red-600 transition"
-  >
-    <MapPin className="mt-1 h-6 w-6 shrink-0 text-red-600" />
-    <span className="leading-relaxed font-medium">
-      G/18, Priya Avenue, G. I. D. C.,<br />
-      Chhatral, Gandhinagar - 382729,<br />
-      Gujarat, India
-    </span>
-  </a>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Ved%20Chem%20Corporation%20G%2F18%20Priya%20Avenue%20GIDC%20Chhatral%20Gandhinagar%20382729%20Gujarat%20India"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-start gap-3 hover:text-red-600 transition"
+              >
+                <MapPin className="mt-1 h-6 w-6 shrink-0 text-red-600" />
+                <span className="leading-relaxed font-medium">
+                  G/18, Priya Avenue, G. I. D. C.,<br />
+                  Chhatral, Gandhinagar - 382729,<br />
+                  Gujarat, India
+                </span>
+              </a>
 
-</div>
+            </div>
+          </div>
 
+          {/* WhatsApp Card */}
           <div className="rounded-[2rem] bg-black p-7 text-white">
             <MessageCircle className="h-8 w-8 text-orange-400" />
             <h3 className="mt-4 text-2xl font-black">Need Help?</h3>
@@ -77,6 +81,7 @@ export default function ContactPage() {
               Chat Now
             </a>
           </div>
+
         </div>
 
         <RFQForm />
