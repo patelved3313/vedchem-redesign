@@ -10,3 +10,4 @@
 .red-orange{background:linear-gradient(135deg,#e11812 0%,#ff4a00 48%,#ff8a00 100%)}.card-hover{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease,background .35s ease}.card-hover:hover{transform:translateY(-8px);box-shadow:0 30px 80px rgba(225,24,18,.14);border-color:rgba(255,106,0,.35)}
 .floaty{animation:floaty 6s ease-in-out infinite}@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}.spin-slow{animation:spin 26s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
 .molecule:before,.molecule:after{content:"";position:absolute;border-radius:999px;background:linear-gradient(135deg,#ff6a00,#e11812);box-shadow:0 0 35px rgba(255,106,0,.32)}.molecule:before{width:130px;height:130px;right:28px;top:24px}.molecule:after{width:82px;height:82px;left:36px;bottom:36px}.scrollbar-hide::-webkit-scrollbar{display:none}.scrollbar-hide{scrollbar-width:none}
+
