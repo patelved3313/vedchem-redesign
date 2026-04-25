@@ -1,4 +1,83 @@
 import Link from 'next/link';
-import { ArrowRight, Search, Beaker } from 'lucide-react';
+import { ArrowRight, Beaker, Search } from 'lucide-react';
 import { categories, products } from '@/lib/products';
-export default function Products(){return <main><section className="relative overflow-hidden red-orange py-24 text-white"><div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-white/20 blur-3xl"/><div className="container relative"><p className="text-sm font-black uppercase tracking-[.2em] text-white/80">Our Products</p><h1 className="mt-4 text-6xl font-black tracking-[-.05em]">Product portfolio</h1><p className="mt-5 max-w-2xl text-white/80">Explore Ved Chem’s structured range of vitamins, mineral salts, amino acids, antibiotics, chelated minerals and speciality chemicals.</p></div></section><section className="container grid gap-8 py-14 lg:grid-cols-[280px_1fr]"><aside className="h-fit rounded-4xl border border-black/8 bg-white p-5 shadow-sm"><h2 className="mb-4 font-black">Categories</h2>{categories.map(c=><Link className="block rounded-2xl px-4 py-3 text-sm font-bold text-black/65 hover:bg-vedOrange hover:text-white" href={`/en/products?category=${c.slug}`}>{c.name}</Link>)}</aside><div><div className="mb-7 flex items-center gap-3 rounded-3xl border border-black/8 bg-white px-5 py-4 shadow-sm"><Search className="h-5 w-5 text-vedOrange"/><span className="text-sm text-black/40">Search by product name, category or application...</span></div><div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">{products.map(p=><Link key={p.slug} href={`/en/products/${p.slug}`} className="card-hover group overflow-hidden rounded-4xl border border-black/8 bg-white"><div className="relative h-44 bg-vedSoft orange-grid"><div className="absolute inset-8 rounded-full bg-gradient-to-br from-yellow-200 via-vedOrange to-vedRed opacity-75 blur-xl transition group-hover:scale-125"/><div className="absolute left-6 top-6 grid h-12 w-12 place-items-center rounded-2xl bg-white shadow-sm"><Beaker className="h-6 w-6 text-vedOrange"/></div></div><div className="p-6"><span className="text-xs font-black uppercase text-vedRed">{p.category}</span><h3 className="mt-2 min-h-14 text-xl font-black">{p.name}</h3><p className="mt-3 text-sm leading-6 text-black/55">{p.short}</p><span className="mt-5 inline-flex items-center font-black text-vedRed">View product <ArrowRight className="ml-1 h-4 w-4"/></span></div></Link>)}</div></div></section></main>}
+
+export default function ProductsPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const base = `/${params.locale}`;
+
+  return (
+    <main className="bg-white">
+      <section className="bg-gradient-to-r from-red-600 to-orange-500 px-6 py-20 text-white">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-white/80">
+            Product Portfolio
+          </p>
+          <h1 className="mt-4 text-5xl font-black">Our Products</h1>
+          <p className="mt-5 max-w-3xl text-lg text-white/90">
+            Explore Ved Chem’s structured range of vitamins, mineral salts,
+            amino acids, antibiotics, chelated minerals, and specialty chemicals.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto grid max-w-7xl gap-8 px-6 py-16 lg:grid-cols-[280px_1fr]">
+        <aside className="h-fit rounded-[2rem] border bg-white p-5 shadow-sm">
+          <h2 className="text-xl font-black">Categories</h2>
+
+          <div className="mt-5 space-y-2">
+            {categories.map((category) => (
+              <a
+                key={category.slug}
+                href={`#${category.slug}`}
+                className="block rounded-2xl px-4 py-3 font-bold text-gray-700 transition hover:bg-orange-50 hover:text-red-600"
+              >
+                {category.name}
+              </a>
+            ))}
+          </div>
+        </aside>
+
+        <div>
+          <div className="mb-8 flex items-center gap-3 rounded-full border bg-white px-5 py-4 shadow-sm">
+            <Search className="h-5 w-5 text-gray-400" />
+            <span className="text-gray-500">Search by product name, category, or application...</span>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            {products.map((product) => (
+              <Link
+                key={product.slug}
+                href={`${base}/products/${product.slug}`}
+                className="group rounded-[2rem] border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="flex h-44 items-center justify-center rounded-[1.5rem] bg-gradient-to-br from-orange-100 to-red-100">
+                  <Beaker className="h-16 w-16 text-orange-600" />
+                </div>
+
+                <p className="mt-6 text-sm font-black uppercase tracking-widest text-red-600">
+                  {product.category}
+                </p>
+
+                <h3 className="mt-3 text-2xl font-black leading-tight text-black">
+                  {product.name}
+                </h3>
+
+                <p className="mt-4 line-clamp-3 text-gray-600">
+                  {product.short}
+                </p>
+
+                <p className="mt-6 inline-flex items-center gap-2 font-black text-red-600">
+                  View details <ArrowRight className="h-4 w-4" />
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
