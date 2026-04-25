@@ -1,24 +1,24 @@
-import { Award, Globe2, ShieldCheck, Truck } from 'lucide-react';
+import { Award, Building2, Globe2, ShieldCheck, Truck } from 'lucide-react';
 
 const values = [
   {
     title: 'Quality Focus',
-    text: 'We support buyers with a quality-first sourcing mindset and clear product communication.',
+    text: 'We prioritize consistent quality, safe usage, and dependable product performance.',
     icon: ShieldCheck,
   },
   {
-    title: 'Global Buyer Support',
-    text: 'Our inquiry flow is built for international B2B buyers looking for reliable chemical supply.',
+    title: 'Customer Feedback',
+    text: 'Our growth is driven by client feedback, continuous improvement, and long-term trust.',
     icon: Globe2,
   },
   {
-    title: 'Reliable Communication',
-    text: 'We focus on fast responses, clear requirements, and practical quotation support.',
+    title: 'Reliable Supply',
+    text: 'We support buyers with clear communication, practical sourcing, and quotation support.',
     icon: Truck,
   },
   {
-    title: 'Professional Standards',
-    text: 'We aim to build long-term trust through consistency, clarity, and dependable service.',
+    title: 'Reasonable Pricing',
+    text: 'We aim to deliver quality products at competitive and practical business pricing.',
     icon: Award,
   },
 ];
@@ -26,55 +26,82 @@ const values = [
 export default function AboutPage() {
   return (
     <main className="bg-white">
-      <section className="bg-gradient-to-r from-red-600 to-orange-500 px-6 py-20 text-white">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-sm font-black uppercase tracking-[0.25em] text-white/80">
+      <section className="relative overflow-hidden bg-gradient-to-br from-black via-red-950 to-orange-600 px-6 py-24 text-white">
+        <div className="absolute right-[-120px] top-[-120px] h-80 w-80 rounded-full bg-orange-400/20 blur-3xl" />
+        <div className="absolute bottom-[-140px] left-[-140px] h-96 w-96 rounded-full bg-red-500/20 blur-3xl" />
+
+        <div className="relative mx-auto max-w-7xl">
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-orange-200">
             About Us
           </p>
-          <h1 className="mt-4 text-5xl font-black">Ved Chem Corporation</h1>
-          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/90">
-            Ved Chem Corporation is a buyer-focused chemical supplier from India
-            serving feed, pharma, nutraceutical, and speciality chemical markets.
+
+          <h1 className="mt-5 max-w-4xl text-5xl font-black leading-tight md:text-6xl">
+            Trusted chemical supply from Chhatral, Gujarat.
+          </h1>
+
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/85">
+            Ved Chem Corporation has been serving buyers since 2013 with a strong
+            focus on quality, client satisfaction, and dependable chemical
+            sourcing.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2">
+      <section className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <p className="text-sm font-black uppercase tracking-[0.25em] text-red-600">
             Company Overview
           </p>
+
           <h2 className="mt-4 text-4xl font-black leading-tight text-black">
-            Building trust through clear sourcing and dependable support.
+            Built on hard work, quality, and customer trust.
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-gray-600">
-            We help B2B buyers source vitamins, mineral salts, amino acids,
-            antibiotics, chelated minerals, and other speciality chemicals with
-            professional communication and a smooth request-for-quote experience.
-          </p>
-          <p className="mt-4 text-lg leading-relaxed text-gray-600">
-            Our website is designed to make product discovery simple, inquiry
-            faster, and communication easier for domestic and international
-            customers.
-          </p>
+
+          <div className="mt-7 space-y-5 text-lg leading-relaxed text-gray-600">
+            <p>
+              Ved Chem Corporation is a Gujarat-based company operating from
+              Chhatral, incorporated in 2011. Over the years, we have built a
+              strong presence as a reliable manufacturer, wholesaler,
+              distributor, supplier, and trader of pharmaceutical raw materials,
+              vitamins, poultry veterinary chemicals, animal feed supplements,
+              and minerals.
+            </p>
+
+            <p>
+              Our growth has been shaped by consistent hard work, research and
+              development focus, and close attention to customer feedback. We aim
+              to provide products that support dependable performance, longer
+              shelf life, high effectiveness, and safe usage.
+            </p>
+
+            <p>
+              With a customer-first mindset, we work to deliver quality products
+              at reasonable prices while building long-term relationships based
+              on trust, service, and consistency.
+            </p>
+          </div>
         </div>
 
-        <div className="rounded-[2rem] bg-black p-8 text-white">
-          <p className="text-sm font-black uppercase tracking-[0.25em] text-orange-400">
-            Why Buyers Choose Us
-          </p>
-          <h3 className="mt-4 text-3xl font-black">
-            Practical sourcing support for serious buyers.
+        <div className="rounded-[2rem] bg-black p-8 text-white shadow-2xl">
+          <Building2 className="h-12 w-12 text-orange-400" />
+
+          <h3 className="mt-6 text-3xl font-black">
+            Ved Chem at a glance
           </h3>
-          <div className="mt-8 space-y-4">
+
+          <div className="mt-8 grid gap-4">
             {[
-              'Wide product portfolio',
-              'Fast RFQ and WhatsApp inquiry flow',
-              'Export-minded communication',
-              'Clear product information and packaging discussion',
-            ].map((item) => (
-              <div key={item} className="rounded-2xl border border-white/10 p-4">
-                {item}
+              ['2013', 'Year Incorporated'],
+              ['Chhatral', 'Gujarat, India'],
+              ['B2B', 'Manufacturer, Supplier & Trader'],
+              ['Quality', 'Focused Product Range'],
+            ].map(([big, small]) => (
+              <div
+                key={big}
+                className="rounded-2xl border border-white/10 bg-white/5 p-5"
+              >
+                <p className="text-3xl font-black text-orange-400">{big}</p>
+                <p className="mt-1 text-sm text-gray-300">{small}</p>
               </div>
             ))}
           </div>
@@ -85,10 +112,11 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="text-sm font-black uppercase tracking-[0.25em] text-red-600">
-              Our Values
+              Our Strengths
             </p>
+
             <h2 className="mt-4 text-4xl font-black text-black">
-              What we focus on
+              What makes us dependable
             </h2>
           </div>
 
@@ -99,12 +127,14 @@ export default function AboutPage() {
               return (
                 <div
                   key={value.title}
-                  className="rounded-[2rem] border bg-white p-6 shadow-sm"
+                  className="rounded-[2rem] border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <Icon className="h-9 w-9 text-orange-500" />
-                  <h3 className="mt-5 text-xl font-black text-black">
+                  <Icon className="h-10 w-10 text-orange-500" />
+
+                  <h3 className="mt-6 text-xl font-black text-black">
                     {value.title}
                   </h3>
+
                   <p className="mt-3 leading-relaxed text-gray-600">
                     {value.text}
                   </p>
