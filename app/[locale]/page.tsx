@@ -1,13 +1,103 @@
 import Link from 'next/link';
-import { ArrowRight, Award, BadgeCheck, Beaker, Boxes, Factory, Globe2, ShieldCheck, Sparkles, Truck, Zap, FlaskConical, Atom } from 'lucide-react';
-import { categories, featuredProducts } from '@/lib/products';
-const stats=[['13+','Years of Excellence'],['250+','Quality Products'],['45+','Countries Served'],['100%','Customer Focus']];
-const industries=['Pharmaceuticals','Animal Nutrition','Nutraceuticals','Food & Beverages','Personal Care','Chemical Industry'];
-const categoryIcons=[Beaker,Boxes,Zap,ShieldCheck,Sparkles,Factory];
-export default function Home(){return <main className="overflow-hidden"><section className="relative hero-gradient orange-grid"><div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"/><div className="container relative grid min-h-[720px] items-center gap-12 py-16 lg:grid-cols-[1.04fr_.96fr]"><div><div className="mb-5 inline-flex rounded-full border border-vedOrange/25 bg-white px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-vedRed shadow-sm">Trusted by industry. Driven by innovation.</div><h1 className="text-balance text-5xl font-black leading-[1.02] tracking-[-.055em] md:text-7xl">Innovating chemical solutions for a <span className="bg-gradient-to-r from-vedRed to-vedOrange bg-clip-text text-transparent">better tomorrow.</span></h1><p className="mt-7 max-w-xl text-lg leading-8 text-black/62">Ved Chem Corporation supplies high-quality vitamins, mineral salts, amino acids, antibiotics, chelated minerals and speciality chemicals for modern B2B buyers.</p><div className="mt-9 flex flex-wrap gap-4"><Link href="/en/products" className="group rounded-full red-orange px-7 py-4 font-black text-white shadow-glow transition hover:scale-105">Explore Products <ArrowRight className="inline h-4 w-4 transition group-hover:translate-x-1"/></Link><Link href="/en/rfq" className="rounded-full border border-vedRed/20 bg-white px-7 py-4 font-black text-black shadow-sm transition hover:border-vedOrange hover:text-vedRed">Request a Quote</Link></div></div><div className="relative h-[520px]"><div className="absolute inset-0 rounded-[3rem] bg-white/60 p-5 shadow-soft"><div className="relative h-full overflow-hidden rounded-[2.5rem] dark-fusion molecule"><div className="absolute inset-0 orange-grid opacity-30"/><div className="absolute left-10 top-10 rounded-full bg-white/10 px-4 py-2 text-xs font-black text-white">Interactive chemical portfolio</div><div className="absolute bottom-10 left-10 right-10 grid gap-4">{['Premium Quality','Fast RFQ Response','Export-Ready Support'].map((x,i)=><div key={x} className="glass flex items-center justify-between rounded-3xl p-5 text-black"><div><p className="text-lg font-black">{x}</p><p className="text-sm text-black/50">Built for international B2B sourcing.</p></div><span className="grid h-11 w-11 place-items-center rounded-full red-orange font-black text-white">0{i+1}</span></div>)}</div><div className="absolute right-12 top-24 grid h-36 w-36 place-items-center rounded-full border border-white/20 bg-white/10 backdrop-blur floaty"><FlaskConical className="h-16 w-16 text-vedOrange"/></div><Atom className="spin-slow absolute right-32 top-64 h-24 w-24 text-white/35"/></div></div></div></div><div className="container relative -mb-12"><div className="grid overflow-hidden rounded-4xl bg-black text-white shadow-soft md:grid-cols-4">{stats.map(([n,l])=><div className="border-white/10 p-7 md:border-r" key={l}><p className="text-4xl font-black text-vedOrange">{n}</p><p className="mt-1 text-sm text-white/62">{l}</p></div>)}</div></div></section>
-<section className="container pt-28"><div className="grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr]"><div><p className="font-black uppercase tracking-[.2em] text-vedRed">About Ved Chem Corporation</p><h2 className="mt-4 text-4xl font-black tracking-[-.04em] md:text-5xl">Quality you can trust, partnerships you can rely on.</h2><p className="mt-6 leading-8 text-black/60">A premium buyer experience focused on clear product information, fast inquiry flow and dependable global communication.</p><div className="mt-7 grid gap-3">{['WHO-GMP & ISO-ready positioning placeholders','Premium quality raw materials','Advanced sourcing and documentation support','Global export standards mindset'].map(x=><p key={x} className="flex gap-3 font-semibold text-black/70"><BadgeCheck className="h-5 w-5 text-vedOrange"/>{x}</p>)}</div><Link href="/en/about" className="mt-8 inline-block rounded-full red-orange px-7 py-4 font-black text-white shadow-glow">Know More About Us</Link></div><div className="relative"><div className="rounded-6xl bg-vedSoft p-6 shadow-soft orange-grid"><div className="grid gap-4 sm:grid-cols-2">{[['Quality Assured',Award],['Reliable Supply',Truck],['Global Buyers',Globe2],['Technical Focus',FlaskConical]].map(([t,Icon]:any)=><div className="card-hover rounded-4xl bg-white p-7"><Icon className="mb-10 h-10 w-10 text-vedOrange"/><h3 className="text-2xl font-black">{t}</h3><p className="mt-3 text-sm leading-6 text-black/52">Professional, conversion-focused product experience without fake building imagery.</p></div>)}</div></div></div></div></section>
-<section className="container py-24"><div className="mb-10 text-center"><p className="font-black uppercase tracking-[.2em] text-vedRed">Our Product Categories</p><h2 className="mt-3 text-4xl font-black tracking-[-.04em] md:text-5xl">High quality chemical solutions</h2></div><div className="grid gap-5 md:grid-cols-3 lg:grid-cols-6">{categories.map((c,i)=>{const Icon=categoryIcons[i];return <Link href={`/en/products?category=${c.slug}`} key={c.slug} className="card-hover group rounded-4xl border border-black/8 bg-white p-6"><div className="mb-8 grid h-14 w-14 place-items-center rounded-2xl bg-vedSoft text-vedOrange group-hover:red-orange group-hover:text-white"><Icon/></div><h3 className="text-xl font-black">{c.name}</h3><p className="mt-3 text-sm leading-6 text-black/55">{c.line}</p><span className="mt-6 inline-block text-sm font-black text-vedRed">Explore →</span></Link>})}</div></section>
-<section className="container pb-24"><div className="mb-8 flex flex-wrap items-end justify-between gap-6"><div><p className="font-black uppercase tracking-[.2em] text-vedRed">Featured products</p><h2 className="mt-3 text-4xl font-black tracking-[-.04em]">Fast paths to popular products.</h2></div><Link href="/en/products" className="font-black text-vedRed">View all products →</Link></div><div className="grid gap-5 md:grid-cols-4">{featuredProducts.map((p)=><Link href={`/en/products/${p.slug}`} key={p.slug} className="card-hover group overflow-hidden rounded-4xl border border-black/8 bg-white"><div className="relative h-48 bg-vedSoft orange-grid"><div className="absolute inset-10 rounded-full bg-gradient-to-br from-yellow-200 via-vedOrange to-vedRed opacity-80 blur-xl transition group-hover:scale-125"/><div className="absolute left-7 top-7 grid h-14 w-14 place-items-center rounded-2xl bg-white shadow-sm"><Beaker className="text-vedOrange"/></div></div><div className="p-6"><span className="text-xs font-black uppercase text-vedRed">{p.category}</span><h3 className="mt-2 min-h-14 text-xl font-black leading-tight">{p.name}</h3><p className="mt-3 line-clamp-2 text-sm leading-6 text-black/55">{p.short}</p><span className="mt-5 inline-flex items-center font-black text-vedRed">View details <ArrowRight className="ml-1 h-4 w-4"/></span></div></Link>)}</div></section>
-<section className="dark-fusion py-24 text-white"><div className="container"><div className="mb-12 text-center"><p className="font-black uppercase tracking-[.2em] text-vedOrange">Why choose us?</p><h2 className="mt-4 text-4xl font-black tracking-[-.04em] md:text-5xl">Your success is our commitment.</h2></div><div className="grid gap-4 md:grid-cols-4">{[[ShieldCheck,'Premium Quality'],[Truck,'Timely Delivery'],[Globe2,'Competitive Pricing'],[Sparkles,'Customer Support']].map(([Icon,label]:any)=><div className="rounded-4xl border border-white/10 bg-white/[.06] p-7 text-center transition hover:bg-white/[.10]"><Icon className="mx-auto mb-7 h-10 w-10 text-vedOrange"/><h3 className="text-xl font-black">{label}</h3><p className="mt-3 text-sm leading-6 text-white/58">Dedicated support for your business requirements.</p></div>)}</div></div></section>
-<section className="container py-24"><div className="rounded-6xl bg-vedSoft p-8 md:p-14 orange-grid"><div className="grid gap-10 lg:grid-cols-[1fr_1.1fr]"><div><p className="font-black uppercase tracking-[.2em] text-vedRed">Industries we serve</p><h2 className="mt-4 text-5xl font-black tracking-[-.04em]">Chemical inputs for growth sectors.</h2></div><div className="grid gap-3 sm:grid-cols-2">{industries.map(i=><div className="rounded-3xl bg-white p-5 font-black shadow-sm">{i}</div>)}</div></div></div></section>
-<section className="container"><div className="relative overflow-hidden rounded-6xl red-orange p-10 text-white md:p-16"><div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-white/20 blur-3xl"/><div className="relative flex flex-wrap items-center justify-between gap-8"><div><p className="font-black uppercase tracking-[.2em] text-white/78">Ready to source?</p><h2 className="mt-4 max-w-2xl text-5xl font-black tracking-[-.04em]">Send product requirements and get a focused response.</h2></div><Link href="/en/rfq" className="rounded-full bg-white px-8 py-4 font-black text-black transition hover:bg-black hover:text-white">Start RFQ →</Link></div></div></section></main>}
+
+export default function HomePage() {
+  const items = [
+    {
+      title: 'Premium Quality',
+      text: 'Reliable sourcing for global B2B buyers.',
+      num: '01',
+    },
+    {
+      title: 'Fast RFQ Response',
+      text: 'Quick quotations and smooth communication.',
+      num: '02',
+    },
+    {
+      title: 'Export Support',
+      text: 'Packaging and documentation support.',
+      num: '03',
+    },
+  ];
+
+  return (
+    <main className="bg-white">
+      {/* HERO */}
+      <section className="mx-auto max-w-7xl px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+            Innovating Chemical Solutions for a{' '}
+            <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
+              Better Tomorrow
+            </span>
+          </h1>
+
+          <p className="mt-4 text-gray-600">
+            Ved Chem Corporation supplies high-quality vitamins, minerals,
+            amino acids, antibiotics, and specialty chemicals worldwide.
+          </p>
+
+          <div className="mt-6 flex gap-4">
+            <Link
+              href="/products"
+              className="rounded-full bg-gradient-to-r from-red-600 to-orange-500 px-6 py-3 text-white font-semibold"
+            >
+              Explore Products
+            </Link>
+
+            <Link
+              href="/contact"
+              className="rounded-full border px-6 py-3 font-semibold"
+            >
+              Request Quote
+            </Link>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE CLEAN CARDS */}
+        <div className="mx-auto w-full max-w-sm space-y-4">
+          {items.map((item) => (
+            <div
+              key={item.num}
+              className="flex items-start justify-between rounded-3xl bg-white p-5 shadow-lg border"
+            >
+              <div>
+                <h3 className="text-lg font-bold text-black">
+                  {item.title}
+                </h3>
+                <p className="mt-1 text-sm text-gray-600">
+                  {item.text}
+                </p>
+              </div>
+
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-red-600 to-orange-500 text-sm font-bold text-white">
+                {item.num}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* STATS */}
+      <section className="bg-black text-white py-10">
+        <div className="mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-4 text-center gap-6">
+          <div>
+            <p className="text-2xl font-bold">13+</p>
+            <p className="text-sm text-gray-400">Years Experience</p>
+          </div>
+          <div>
+            <p className="text-2xl font-bold">250+</p>
+            <p className="text-sm text-gray-400">Products</p>
+          </div>
+          <div>
+            <p className="text-2xl font-bold">45+</p>
+            <p className="text-sm text-gray-400">Countries</p>
+          </div>
+          <div>
+            <p className="text-2xl font-bold">100%</p>
+            <p className="text-sm text-gray-400">Satisfaction</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
