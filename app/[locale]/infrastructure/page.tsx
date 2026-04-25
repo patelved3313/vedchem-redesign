@@ -31,9 +31,11 @@ export default function InfrastructurePage() {
           <p className="text-sm font-black uppercase tracking-[0.25em] text-white/80">
             Infrastructure
           </p>
+
           <h1 className="mt-4 text-5xl font-black">
             Operations & supply support
           </h1>
+
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/90">
             A practical operations-focused page for warehousing, quality
             coordination, packaging, and dispatch support. Real photos can be
@@ -50,12 +52,14 @@ export default function InfrastructurePage() {
             return (
               <div
                 key={item.title}
-                className="rounded-[2rem] border bg-white p-6 shadow-sm"
+                className="rounded-[2rem] border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <Icon className="h-9 w-9 text-orange-500" />
+
                 <h2 className="mt-6 text-xl font-black text-black">
                   {item.title}
                 </h2>
+
                 <p className="mt-3 leading-relaxed text-gray-600">
                   {item.text}
                 </p>
@@ -65,10 +69,11 @@ export default function InfrastructurePage() {
         </div>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
-          <div className="rounded-[2rem] bg-gray-50 p-8">
+          <div className="rounded-[2rem] bg-gray-50 p-8 transition hover:-translate-y-1 hover:shadow-xl">
             <h2 className="text-3xl font-black text-black">
               Designed for B2B reliability
             </h2>
+
             <p className="mt-4 leading-relaxed text-gray-600">
               Ved Chem’s digital experience is structured to support product
               discovery, RFQ submissions, WhatsApp communication, and buyer
@@ -76,10 +81,11 @@ export default function InfrastructurePage() {
             </p>
           </div>
 
-          <div className="rounded-[2rem] bg-black p-8 text-white">
+          <div className="rounded-[2rem] bg-black p-8 text-white transition hover:-translate-y-1 hover:shadow-xl">
             <h2 className="text-3xl font-black">
               Add real facility images later
             </h2>
+
             <p className="mt-4 leading-relaxed text-gray-300">
               This section intentionally avoids fake building images. Actual
               warehouse, team, product, or packaging photos can be added when
