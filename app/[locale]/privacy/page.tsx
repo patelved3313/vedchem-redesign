@@ -1,0 +1,1 @@
+export default function Page(){return <main><section className="dark-radial py-24 text-white"><div className="container"><h1 className="text-6xl font-black tracking-[-.05em]">Privacy</h1></div></section><section className="container py-16"><p className="rounded-5xl bg-vedSoft p-10 text-black/60">Content placeholder for privacy.</p></section></main>}
