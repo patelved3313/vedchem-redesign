@@ -1,53 +1,52 @@
 import { PrismaClient } from '@prisma/client';
-import { categories, products } from '../lib/products';
 
 const prisma = new PrismaClient();
 
+const products = [
+  {
+    name: 'Dicalcium Phosphate',
+    slug: 'dcp',
+    category: 'Feed Additives',
+    short: 'High-quality DCP for animal nutrition.',
+    description: 'Used as a dietary supplement in animal feed to provide calcium and phosphorus.',
+    applications: ['Poultry Feed', 'Cattle Feed', 'Aquaculture'],
+    features: ['High Purity', 'Excellent Bioavailability'],
+    packaging: '25kg / 50kg bags',
+  },
+  {
+    name: 'Tricalcium Phosphate',
+    slug: 'tcp',
+    category: 'Feed Additives',
+    short: 'Premium TCP for feed and industrial use.',
+    description: 'Provides essential minerals for livestock and industrial applications.',
+    applications: ['Feed Industry', 'Food Industry'],
+    features: ['Stable Composition', 'High Quality'],
+    packaging: '25kg / 50kg bags',
+  },
+];
+
 async function main() {
-  for (const category of categories) {
-    await prisma.category.upsert({
-      where: { slug: category.slug },
-      update: {
-        name: category.name,
-        description: category.line,
-      },
-      create: {
-        name: category.name,
-        slug: category.slug,
-        description: category.line,
-      },
-    });
-  }
-
-  for (const product of products) {
-    const dbCategory = await prisma.category.findUnique({
-      where: {
-        slug: categories.find((c) => c.name === product.category)?.slug || 'other-chemicals',
-      },
+  for (const p of products) {
+    // create category if not exists
+    const dbCategory = await prisma.category.upsert({
+      where: { name: p.category },
+      update: {},
+      create: { name: p.category },
     });
 
-    if (!dbCategory) continue;
-
+    // create product
     await prisma.product.upsert({
-      where: { slug: product.slug },
-      update: {
-        name: product.name,
-        categoryId: dbCategory.id,
-        shortDescription: product.short,
-        description: product.description,
-        applications: product.applications,
-        features: product.features,
-        packaging: product.packaging,
-      },
+      where: { slug: p.slug },
+      update: {},
       create: {
-        name: product.name,
-        slug: product.slug,
+        name: p.name,
+        slug: p.slug,
         categoryId: dbCategory.id,
-        shortDescription: product.short,
-        description: product.description,
-        applications: product.applications,
-        features: product.features,
-        packaging: product.packaging,
+        shortDescription: p.short,
+        description: p.description,
+        applications: p.applications,
+        features: p.features,
+        packaging: p.packaging,
       },
     });
   }
@@ -56,9 +55,10 @@ async function main() {
 main()
   .then(async () => {
     await prisma.$disconnect();
+    console.log('✅ Seed completed');
   })
-  .catch(async (error) => {
-    console.error(error);
+  .catch(async (e) => {
+    console.error(e);
     await prisma.$disconnect();
     process.exit(1);
   });
