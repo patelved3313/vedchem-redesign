@@ -58,23 +58,16 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* UPDATED CONTACT SECTION */}
           <div>
             <h3 className="text-xl font-black text-black">Contact</h3>
             <div className="mt-5 space-y-4 text-gray-600">
 
-              <a
-                href="tel:+919925256056"
-                className="flex items-center gap-3 hover:text-red-600"
-              >
+              <a href="tel:+919925256056" className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-red-600" />
                 +91 9925256056
               </a>
 
-              <a
-                href="mailto:vedchem2011@gmail.com"
-                className="flex items-center gap-3 hover:text-red-600"
-              >
+              <a href="mailto:vedchem2011@gmail.com" className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-red-600" />
                 vedchem2011@gmail.com
               </a>
@@ -83,16 +76,10 @@ export default function Footer() {
                 href="https://www.google.com/maps/search/?api=1&query=Ved%20Chem%20Corporation%20G%2F18%20Priya%20Avenue%20GIDC%20Chhatral%20Gandhinagar%20382729%20Gujarat%20India"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 hover:text-red-600"
+                className="flex items-center gap-3"
               >
-                <MapPin className="mt-1 h-5 w-5 text-red-600" />
-                <span>
-                  G/18, Priya Avenue, G. I. D. C.,
-                  <br />
-                  Chhatral, Gandhinagar - 382729,
-                  <br />
-                  Gujarat, India
-                </span>
+                <MapPin className="h-5 w-5 text-red-600" />
+                G/18, Priya Avenue, G. I. D. C., Chhatral, Gandhinagar - 382729, Gujarat, India
               </a>
 
             </div>
