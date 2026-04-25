@@ -15,7 +15,7 @@ import {
 import { categories, featuredProducts } from '@/lib/products';
 
 const stats = [
-  ['13+', 'Years of Excellence'],
+  ['15+', 'Years of Excellence'],
   ['250+', 'Quality Products'],
   ['45+', 'Countries Served'],
   ['100%', 'Customer Focus'],
