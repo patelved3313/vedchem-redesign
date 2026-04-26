@@ -122,7 +122,7 @@ export default function HomePage({
 
       {/* STATS */}
       <section className="mx-auto max-w-7xl px-6 pb-20">
-        <div className="grid grid-cols-2 gap-4 rounded-[2rem] bg-black p-6 text-white md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 rounded-[2rem] bg-gradient-to-br from-black via-[#1a0803] to-red-950 p-6 text-white md:grid-cols-4">
           {stats.map(([num, label]) => (
             <div key={label} className="text-center">
               <p className="text-3xl font-black">{num}</p>
