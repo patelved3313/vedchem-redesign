@@ -80,7 +80,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="rounded-[2rem] bg-black p-8 text-white shadow-2xl">
+        <div className="rounded-[2rem] bg-gradient-to-br from-black via-[#1a0803] to-red-950 p-8 text-white shadow-2xl">
           <Building2 className="h-12 w-12 text-orange-400" />
 
           <h3 className="mt-6 text-3xl font-black">
