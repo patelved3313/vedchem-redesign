@@ -57,7 +57,7 @@ export default function QualityPage() {
           })}
         </div>
 
-        <div className="mt-16 rounded-[2rem] bg-black p-8 text-white md:p-12">
+        <div className="mt-16 rounded-[2rem] bg-gradient-to-br from-black via-[#1a0803] to-red-950 p-8 text-white md:p-12">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-orange-400">
             Buyer Confidence
           </p>
